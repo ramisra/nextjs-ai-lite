@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
+import Head from "next/head";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next.js AI Lite App",
-  description: "AI with Next and AI SDK",
+  title: "Celeris AI ",
+  description: "Notion Like Workspace for Investment Analyst",
 };
 
 export default function RootLayout({
@@ -18,11 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        ></link>
+      </Head>
         <Header />
-        <main className="bg-muted/50 flex h-100vh flex-1 flex-col">
+        <main className="bg-muted/50 flex h-100vh w-full">
           {children}
         </main>
       </body>
     </html>
-  );
+  )
 }
